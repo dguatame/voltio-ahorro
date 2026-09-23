@@ -1,0 +1,44 @@
+<header class="site-header">
+  <div class="wrap header-bar">
+    <a class="logo" routerLink="/" (click)="close()">
+      <span class="logo-mark">
+        <span class="icon icon-20">
+          <img src="images/cloud-lightning.svg" alt="" />
+        </span>
+      </span>
+      <span>Voltio <span class="accent">Ahorro</span></span>
+    </a>
+
+    <button
+      type="button"
+      class="menu-btn"
+      (click)="toggle()"
+      [attr.aria-expanded]="open()"
+      aria-controls="main-menu"
+    >
+      {{ open() ? 'Cerrar' : 'Menú' }}
+    </button>
+
+    <div id="main-menu" class="header-panel" [class.is-open]="open()">
+      <nav>
+        <a routerLink="/" fragment="problem" (click)="close()">El Problema</a>
+        <a routerLink="/" fragment="solution" (click)="close()">La Solución</a>
+        <a routerLink="/" fragment="how-it-works" (click)="close()">Cómo Funciona</a>
+        <a routerLink="/" fragment="benefits" (click)="close()">Beneficios</a>
+        <a routerLink="/" fragment="testimonials" (click)="close()">Testimonios</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="phone" href="tel:+34900838120">
+          <span class="icon icon-16">
+            <img src="images/phone.svg" alt="" />
+          </span>
+          900 838 120
+        </a>
+        <a class="btn btn-primary" routerLink="/" fragment="contact" (click)="close()">
+          Estudio Gratis
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
